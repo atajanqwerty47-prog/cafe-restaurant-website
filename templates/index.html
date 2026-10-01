@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Royal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-wrapper">
+            <div class="logo">Cafe <span>Royal</span></div>
+            <nav class="nav">
+                <a href="#home">Главная</a>
+                <a href="#menu">Меню</a>
+                <a href="#about">О нас</a>
+                <a href="#reviews">Отзывы</a>
+                <a href="#contact">Контакты</a>
+            </nav>
+            <button class="nav-btn">Забронировать</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="overlay"></div>
+            <div class="container hero-content">
+                <p class="eyebrow">Уют • Вкус • Атмосфера</p>
+                <h1>Вкус, который запоминается</h1>
+                <p class="subtitle">Наслаждайтесь изысканной кухней, ароматным кофе и теплой атмосферой в сердце города.</p>
+                <div class="hero-actions">
+                    <a href="#menu" class="btn btn-primary">Посмотреть меню</a>
+                    <a href="#contact" class="btn btn-secondary">Связаться</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container feature-grid">
+                <div class="feature-card">
+                    <span>✔</span>
+                    <h3>Свежие продукты</h3>
+                    <p>Только натуральные ингредиенты и сезонные блюда.</p>
+                </div>
+                <div class="feature-card">
+                    <span>☕</span>
+                    <h3>Кофе премиум</h3>
+                    <p>Ароматный кофе, приготовленный с любовью.</p>
+                </div>
+                <div class="feature-card">
+                    <span>🎶</span>
+                    <h3>Уютная атмосфера</h3>
+                    <p>Идеально для встреч, семейных ужинов и отдыха.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section" id="menu">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow dark">Наше меню</p>
+                    <h2>Изысканные блюда для каждого вкуса</h2>
+                </div>
+
+                <div class="menu-grid">
+                    {% for product in products %}
+                    <div class="menu-item">
+                        <div class="item-top">
+                            <span class="category">{{ product.category }}</span>
+                            <span class="price">{{ product.price }} сум</span>
+                        </div>
+                        <h3>{{ product.name }}</h3>
+                        <p>Свежие ингредиенты, вкусная подача и уютная атмосфера.</p>
+                        <button>Заказать</button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="container about-wrapper">
+                <div class="about-image"></div>
+                <div class="about-text">
+                    <p class="eyebrow dark">О нас</p>
+                    <h2>Место, где хочется возвращаться</h2>
+                    <p>
+                        Cafe Royal — это современное кафе с теплой атмосферой, приятным сервисом и вкусной кухней.
+                        Мы создаем пространство для семейных обедов, романтических ужинов и дружеских встреч.
+                    </p>
+                    <ul>
+                        <li>Домашняя атмосфера</li>
+                        <li>Профессиональный персонал</li>
+                        <li>Авторские блюда и десерты</li>
+                        <li>Идеальное место для отдыха</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="posts" id="reviews">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow dark">Отзывы</p>
+                    <h2>Что говорят наши гости</h2>
+                </div>
+
+                <div class="posts-grid">
+                    {% for post in posts %}
+                    <article class="post-card">
+                        <span class="post-tag">{{ post.author }}</span>
+                        <h3>{{ post.title }}</h3>
+                        <p>{{ post.text }}</p>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container contact-wrapper">
+                <div class="contact-text">
+                    <p class="eyebrow dark">Контакты</p>
+                    <h2>Забронируйте столик</h2>
+                    <p>+998 (71) 123-45-67</p>
+                    <p>г. Ташкент, ул. Улица 1</p>
+                    <p>Пн-Вс: 09:00 - 23:00</p>
+                </div>
+
+                <form class="contact-form">
+                    <input type="text" placeholder="Ваше имя">
+                    <input type="tel" placeholder="Номер телефона">
+                    <textarea placeholder="Ваше сообщение"></textarea>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>© 2025 Cafe Royal</p>
+            <p>Все права защищены</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

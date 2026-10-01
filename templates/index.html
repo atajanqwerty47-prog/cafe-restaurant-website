@@ -3,178 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafe Royal</title>
-    <meta name="description" content="Cafe Royal — уютное кафе с авторской кухней, кофе и атмосферой для настоящих встреч.">
+    <title>Cafe Royal - Премиальное кафе в городе</title>
+    <meta name="description" content="Cafe Royal — уютное премиальное кафе с авторской кухней, кофе и атмосферой для встреч. Адрес: 11 микрорайон. Тел: +993 65 555 55">
+    <meta name="keywords" content="кафе, ресторан, кофе, еда, встречи, Ташкент">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <!-- HEADER С КОНТАКТАМИ -->
     <header class="header">
-        <div class="container nav-wrapper">
-            <div class="logo">Cafe <span>Royal</span></div>
-            <nav class="nav">
-                <a href="#home">Главная</a>
-                <a href="#menu">Меню</a>
-                <a href="#story">История</a>
-                <a href="#gallery">Галерея</a>
-                <a href="#contact">Контакты</a>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">Cafe <span>Royal</span></div>
+                <div class="header-contacts">
+                    <a href="tel:+9936555555" class="contact-btn phone">
+                        <span class="icon">📞</span>
+                        <span class="text">+993 65 555 55</span>
+                    </a>
+                    <a href="#contact" class="contact-btn address">
+                        <span class="icon">📍</span>
+                        <span class="text">11 микрорайон</span>
+                    </a>
+                </div>
+            </div>
+            
+            <nav class="nav-wrapper">
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <nav class="nav" id="navMenu">
+                    <a href="#home">Главная</a>
+                    <a href="#menu">Меню</a>
+                    <a href="#story">История</a>
+                    <a href="#gallery">Галерея</a>
+                    <a href="#contact">Контакты</a>
+                </nav>
+                <a href="tel:+9936555555" class="btn btn-call">Позвонить</a>
             </nav>
-            <button class="nav-btn">Забронировать</button>
         </div>
     </header>
 
     <main>
+        <!-- HERO SECTION -->
         <section class="hero" id="home">
+            <div class="hero-bg"></div>
             <div class="overlay"></div>
-            <div class="container hero-content">
-                <p class="eyebrow">Уют • Вкус • Атмо��фера</p>
-                <h1>Вкус, который хочется повторить</h1>
-                <p class="subtitle">Авторская кухня, ароматный кофе и особенная атмосфера для встреч, отдыха и удовольствия.</p>
-                <div class="hero-actions">
-                    <a href="#menu" class="btn btn-primary">Посмотреть меню</a>
-                    <a href="#contact" class="btn btn-secondary">Связаться</a>
-                </div>
-                <div class="hero-meta">
-                    <div>
-                        <strong>4.9/5</strong>
-                        <span>Средний рейтинг гостей</span>
+            <div class="container">
+                <div class="hero-content">
+                    <p class="eyebrow">✨ Премиальное кафе ✨</p>
+                    <h1>Вкус, который хочется повторить</h1>
+                    <p class="subtitle">Авторская кухня, ароматный кофе и особенная атмосфера для встреч, отдыха и удовольствия</p>
+                    <div class="hero-actions">
+                        <a href="#menu" class="btn btn-primary">Посмотреть меню</a>
+                        <a href="tel:+9936555555" class="btn btn-secondary">Позвонить сейчас</a>
                     </div>
-                    <div>
-                        <strong>10+</strong>
-                        <span>Авторских блюд</span>
-                    </div>
-                    <div>
-                        <strong>09:00-23:00</strong>
-                        <span>Рабочие часы</span>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <strong>4.9★</strong>
+                            <span>Рейтинг гостей</span>
+                        </div>
+                        <div class="stat">
+                            <strong>12+</strong>
+                            <span>Авторских блюд</span>
+                        </div>
+                        <div class="stat">
+                            <strong>09:00-23:00</strong>
+                            <span>Ежеднев��о</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- FEATURES -->
         <section class="features">
-            <div class="container feature-grid">
-                <div class="feature-card">
-                    <span>✔</span>
-                    <h3>Свежие продукты</h3>
-                    <p>Натуральные ингредиенты, сезонные продукты и особое внимание к качеству.</p>
-                </div>
-                <div class="feature-card">
-                    <span>☕</span>
-                    <h3>Премиум кофе</h3>
-                    <p>Кофе, приготовленный по правильной технологии, чтобы каждый глоток приносил наслаждение.</p>
-                </div>
-                <div class="feature-card">
-                    <span>🎶</span>
-                    <h3>Уютная атмосфера</h3>
-                    <p>Нежный свет, музыка и тёплый интерьер для романтических и семейных встреч.</p>
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">✓</div>
+                        <h3>Свежие продукты</h3>
+                        <p>Только натуральные ингредиенты и сезонные продукты с особым вниманием к качеству</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">☕</div>
+                        <h3>Премиум кофе</h3>
+                        <p>Кофе, приготовленный по правильной технологии для идеального вкуса</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎵</div>
+                        <h3>Уютная атмосфера</h3>
+                        <p>Нежный свет, музыка и тёплый интерьер для идеальных моментов</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👥</div>
+                        <h3>Внимательный сервис</h3>
+                        <p>Профессиональная команда готова угодить каждому гостю</p>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- MENU SECTION -->
         <section class="menu-section" id="menu">
             <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow dark">Наше меню</p>
+                <div class="section-header">
+                    <p class="eyebrow-dark">🍽️ Наше меню</p>
                     <h2>Премиальные блюда и напитки</h2>
+                    <p class="subtitle-dark">Каждое блюдо готовится с любовью нашими шефами</p>
                 </div>
 
                 <div class="menu-grid">
                     {% for product in products %}
-                    <div class="menu-item">
-                        <div class="item-top">
-                            <span class="category">{{ product.category }}</span>
+                    <div class="menu-card">
+                        <div class="card-header">
+                            <span class="badge">{{ product.category }}</span>
                             <span class="price">{{ product.price }} сум</span>
                         </div>
                         <h3>{{ product.name }}</h3>
                         <p>{{ product.desc }}</p>
-                        <button>Заказать</button>
+                        <button class="btn-order" onclick="alert('Спасибо! Ваш заказ добавлен в корзину.')">Заказать</button>
                     </div>
                     {% endfor %}
                 </div>
             </div>
         </section>
 
+        <!-- STORY SECTION -->
         <section class="story" id="story">
-            <div class="container story-grid">
-                <div class="story-image"></div>
-                <div class="story-text">
-                    <p class="eyebrow dark">О нас</p>
-                    <h2>Место, где хочется возвращаться</h2>
-                    <p>
-                        Cafe Royal — это современное кафе с тёплой атмосферой, внимательным сервисом и душевной кухней.
-                        Мы объединяем классические рецепты и современные вкусы, чтобы каждый гость чувствовал себя как дома.
-                    </p>
-                    <ul>
-                        <li>Домашняя атмосфера и стильный интерьер</li>
-                        <li>Изысканные блюда и свежая выпечка</li>
-                        <li>Дружелюбный персонал и быстрый сервис</li>
-                        <li>Идеально для ужина, кофе и встреч</li>
-                    </ul>
+            <div class="container">
+                <div class="story-grid">
+                    <div class="story-image"></div>
+                    <div class="story-text">
+                        <p class="eyebrow-dark">📖 Наша история</p>
+                        <h2>Место, где хочется возвращаться</h2>
+                        <p>
+                            Cafe Royal — это современное кафе с тёплой атмосферой, внимательным сервисом и душевной кухней. Мы верим, что правильная еда и уютная обстановка могут изменить день каждого человека.
+                        </p>
+                        <p>
+                            Мы объединяем классические рецепты и современные вкусы, чтобы каждый гость чувствовал себя как дома. Каждый напиток, каждое блюдо — это результат нашей любви к мастерству и уважения к вам.
+                        </p>
+                        <ul class="story-list">
+                            <li>✓ Домашняя атмосфера и стильный интерьер</li>
+                            <li>✓ Изысканные блюда и свежая выпечка</li>
+                            <li>✓ Дружелюбный персонал и быстрый сервис</li>
+                            <li>✓ Идеально для встреч, свиданий и семейных обедов</li>
+                            <li>✓ Волшебная атмосфера для каждого момента</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- GALLERY -->
         <section class="gallery" id="gallery">
             <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow dark">Галерея</p>
+                <div class="section-header">
+                    <p class="eyebrow-dark">🖼️ Галерея</p>
                     <h2>Вдохновляющие моменты нашей кухни</h2>
                 </div>
-
                 <div class="gallery-grid">
-                    <div class="gallery-item tall"></div>
-                    <div class="gallery-item"></div>
-                    <div class="gallery-item"></div>
-                    <div class="gallery-item wide"></div>
+                    <div class="gallery-item" style="background: url('https://images.unsplash.com/photo-1495521821757-a1efb6729352?w=600&h=700&fit=crop') center/cover;"></div>
+                    <div class="gallery-item" style="background: url('https://images.unsplash.com/photo-1459755486867-b8d1f4850722?w=400&h=400&fit=crop') center/cover;"></div>
+                    <div class="gallery-item" style="background: url('https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&h=400&fit=crop') center/cover;"></div>
+                    <div class="gallery-item wide" style="background: url('https://images.unsplash.com/photo-1504674900968-8873fce0e59e?w=800&h=400&fit=crop') center/cover;"></div>
                 </div>
             </div>
         </section>
 
-        <section class="posts" id="reviews">
+        <!-- REVIEWS -->
+        <section class="reviews" id="reviews">
             <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow dark">Отзывы</p>
-                    <h2>То, что говорят наши гости</h2>
+                <div class="section-header">
+                    <p class="eyebrow-dark">⭐ Отзывы</p>
+                    <h2>Что говорят наши гости</h2>
                 </div>
-
-                <div class="posts-grid">
+                <div class="reviews-grid">
                     {% for post in posts %}
-                    <article class="post-card">
-                        <span class="post-tag">{{ post.author }}</span>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="author-badge">{{ post.author }}</span>
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                        </div>
                         <h3>{{ post.title }}</h3>
                         <p>{{ post.text }}</p>
-                    </article>
+                    </div>
                     {% endfor %}
                 </div>
             </div>
         </section>
 
+        <!-- CONTACT SECTION -->
         <section class="contact" id="contact">
-            <div class="container contact-wrapper">
-                <div class="contact-text">
-                    <p class="eyebrow dark">Контакты</p>
-                    <h2>Забронируйте столик</h2>
-                    <p><strong>Телефон:</strong> <a href="tel:+9936555555">+993 65 555 55</a></p>
-                    <p><strong>Адрес:</strong> 11 микрорайон</p>
-                    <p><strong>Часы:</strong> Пн-Вс: 09:00 - 23:00</p>
+            <div class="container">
+                <div class="section-header">
+                    <p class="eyebrow-dark">📞 Свяжитесь с нами</p>
+                    <h2>Забронируйте столик или оставьте отзыв</h2>
                 </div>
-
-                <form class="contact-form">
-                    <input type="text" placeholder="Ваше имя" required>
-                    <input type="tel" placeholder="Номер телефона" required>
-                    <textarea placeholder="Ваше сообщение" required></textarea>
-                    <button type="submit" class="btn btn-primary">Отправить</button>
-                </form>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="info-block">
+                            <h3>📞 Телефон</h3>
+                            <p><a href="tel:+9936555555">+993 65 555 55</a></p>
+                            <p class="small">Звоните в любое время</p>
+                        </div>
+                        
+                        <div class="info-block">
+                            <h3>📍 Адрес</h3>
+                            <p>11 микрорайон</p>
+                            <p class="small">Центр города</p>
+                        </div>
+                        
+                        <div class="info-block">
+                            <h3>🕐 Часы работы</h3>
+                            <p>Пн-Вс: 09:00 - 23:00</p>
+                            <p class="small">Ежедневно открыты для вас</p>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Номер телефона" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Ваше сообщение" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="container footer-content">
-            <p>© 2025 Cafe Royal</p>
-            <p>Все права защищены</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Cafe Royal</h4>
+                    <p>Премиальное кафе с авторской кухней и теплой атмосферой</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Меню</h4>
+                    <ul>
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#menu">Меню</a></li>
+                        <li><a href="#story">История</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li><a href="tel:+9936555555">Позвонить</a></li>
+                        <li><a href="#contact">Написать</a></li>
+                        <li>11 микрорайон</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cafe Royal. Все права защищены.</p>
+            </div>
         </div>
     </footer>
 

@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cafe Royal</title>
+    <meta name="description" content="Cafe Royal — уютное кафе с авторской кухней, кофе и атмосферой для настоящих встреч.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -16,8 +17,8 @@
             <nav class="nav">
                 <a href="#home">Главная</a>
                 <a href="#menu">Меню</a>
-                <a href="#about">О нас</a>
-                <a href="#reviews">Отзывы</a>
+                <a href="#story">История</a>
+                <a href="#gallery">Галерея</a>
                 <a href="#contact">Контакты</a>
             </nav>
             <button class="nav-btn">Забронировать</button>
@@ -29,11 +30,25 @@
             <div class="overlay"></div>
             <div class="container hero-content">
                 <p class="eyebrow">Уют • Вкус • Атмосфера</p>
-                <h1>Вкус, который запоминается</h1>
-                <p class="subtitle">Наслаждайтесь изысканной кухней, ароматным кофе и теплой атмосферой в сердце города.</p>
+                <h1>Вкус, который хочется повторить</h1>
+                <p class="subtitle">Авторская кухня, ароматный кофе и особенная атмосфера для встреч, отдыха и удовольствия.</p>
                 <div class="hero-actions">
                     <a href="#menu" class="btn btn-primary">Посмотреть меню</a>
                     <a href="#contact" class="btn btn-secondary">Связаться</a>
+                </div>
+                <div class="hero-meta">
+                    <div>
+                        <strong>4.9/5</strong>
+                        <span>Средний рейтинг гостей</span>
+                    </div>
+                    <div>
+                        <strong>10+</strong>
+                        <span>Авторских блюд</span>
+                    </div>
+                    <div>
+                        <strong>09:00-23:00</strong>
+                        <span>Рабочие часы</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -43,17 +58,17 @@
                 <div class="feature-card">
                     <span>✔</span>
                     <h3>Свежие продукты</h3>
-                    <p>Только натуральные ингредиенты и сезонные блюда.</p>
+                    <p>Натуральные ингредиенты, сезонные продукты и особое внимание к качеству.</p>
                 </div>
                 <div class="feature-card">
                     <span>☕</span>
-                    <h3>Кофе премиум</h3>
-                    <p>Ароматный кофе, приготовленный с любовью.</p>
+                    <h3>Премиум кофе</h3>
+                    <p>Кофе, приготовленный по правильной технологии, чтобы каждый глоток приносил наслаждение.</p>
                 </div>
                 <div class="feature-card">
                     <span>🎶</span>
                     <h3>Уютная атмосфера</h3>
-                    <p>Идеально для встреч, семейных ужинов и отдыха.</p>
+                    <p>Нежный свет, музыка и тёплый интерьер для романтических и семейных встреч.</p>
                 </div>
             </div>
         </section>
@@ -62,7 +77,7 @@
             <div class="container">
                 <div class="section-heading">
                     <p class="eyebrow dark">Наше меню</p>
-                    <h2>Изысканные блюда для каждого вкуса</h2>
+                    <h2>Премиальные блюда и напитки</h2>
                 </div>
 
                 <div class="menu-grid">
@@ -73,7 +88,7 @@
                             <span class="price">{{ product.price }} сум</span>
                         </div>
                         <h3>{{ product.name }}</h3>
-                        <p>Свежие ингредиенты, вкусная подача и уютная атмосфера.</p>
+                        <p>{{ product.desc }}</p>
                         <button>Заказать</button>
                     </div>
                     {% endfor %}
@@ -81,22 +96,38 @@
             </div>
         </section>
 
-        <section class="about" id="about">
-            <div class="container about-wrapper">
-                <div class="about-image"></div>
-                <div class="about-text">
+        <section class="story" id="story">
+            <div class="container story-grid">
+                <div class="story-image"></div>
+                <div class="story-text">
                     <p class="eyebrow dark">О нас</p>
                     <h2>Место, где хочется возвращаться</h2>
                     <p>
-                        Cafe Royal — это современное кафе с теплой атмосферой, приятным сервисом и вкусной кухней.
-                        Мы создаем пространство для семейных обедов, романтических ужинов и дружеских встреч.
+                        Cafe Royal — это современное кафе с тёплой атмосферой, внимательным сервисом и душевной кухней.
+                        Мы объединяем классические рецепты и современные вкусы, чтобы каждый гость чувствовал себя как дома.
                     </p>
                     <ul>
-                        <li>Домашняя атмосфера</li>
-                        <li>Профессиональный персонал</li>
-                        <li>Авторские блюда и десерты</li>
-                        <li>Идеальное место для отдыха</li>
+                        <li>Домашняя атмосфера и стильный интерьер</li>
+                        <li>Изысканные блюда и свежая выпечка</li>
+                        <li>Дружелюбный персонал и быстрый сервис</li>
+                        <li>Идеально для ужина, кофе и встреч</li>
                     </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery" id="gallery">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow dark">Галерея</p>
+                    <h2>Вдохновляющие моменты нашей кухни</h2>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item tall"></div>
+                    <div class="gallery-item"></div>
+                    <div class="gallery-item"></div>
+                    <div class="gallery-item wide"></div>
                 </div>
             </div>
         </section>
@@ -105,7 +136,7 @@
             <div class="container">
                 <div class="section-heading">
                     <p class="eyebrow dark">Отзывы</p>
-                    <h2>Что говорят наши гости</h2>
+                    <h2>То, что говорят наши гости</h2>
                 </div>
 
                 <div class="posts-grid">
@@ -125,15 +156,15 @@
                 <div class="contact-text">
                     <p class="eyebrow dark">Контакты</p>
                     <h2>Забронируйте столик</h2>
-                    <p>+998 (71) 123-45-67</p>
-                    <p>г. Ташкент, ул. Улица 1</p>
-                    <p>Пн-Вс: 09:00 - 23:00</p>
+                    <p><strong>Телефон:</strong> +998 (71) 123-45-67</p>
+                    <p><strong>Адрес:</strong> г. Ташкент, ул. Бухарская, 24</p>
+                    <p><strong>Часы:</strong> Пн-Вс: 09:00 - 23:00</p>
                 </div>
 
                 <form class="contact-form">
-                    <input type="text" placeholder="Ваше имя">
-                    <input type="tel" placeholder="Номер телефона">
-                    <textarea placeholder="Ваше сообщение"></textarea>
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="tel" placeholder="Номер телефона" required>
+                    <textarea placeholder="Ваше сообщение" required></textarea>
                     <button type="submit" class="btn btn-primary">Отправить</button>
                 </form>
             </div>
